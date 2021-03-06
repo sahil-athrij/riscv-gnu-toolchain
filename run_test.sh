@@ -17,4 +17,6 @@ cd ..
 
 #### MAIN SCRIIPT FOR TESTING
 #./run_test_pr84877_rv32_ilp32e.sh
-./run_test_bug98981_rv64gc.sh
+./run_test_multilib.sh
+#./run_test_bug98981_rv64gc.sh
+
