@@ -5,6 +5,32 @@ This is the RISC-V C and C++ cross-compiler. It supports two build modes:
 a generic ELF/Newlib toolchain and a more sophisticated Linux-ELF/glibc
 toolchain.
 
+##  P-extension-specific
+
+build `riscv64gcp-lp64d` in ubuntu 20.4 with gcc 9.3 via newlib for example
+```
+git submodule update --init
+
+cd riscv-gcc
+git checkout p-ext-dev
+cd ..
+
+cd riscv-binutils
+git checkout riscv-binutils-2.35
+cd ..
+
+# Temp Fix. See:
+#    https://github.com/riscv/riscv-gnu-toolchain/issues/736
+cd qemu
+git checkout v5.2.0
+git submodule update --init --recursive
+cd ..
+
+./configure --prefix="rv64gcp/" --with-arch=rv64gcp --with-abi=lp64d
+
+make newlib
+```
+
 ###  Getting the sources
 
 This repository uses submodules, but submodules will fetch automatically on demand,
