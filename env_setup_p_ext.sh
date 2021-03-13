@@ -2,6 +2,7 @@ git submodule update --init
 
 cd riscv-gcc
 git checkout p-ext-dev
+git pull
 cd ..
 
 cd riscv-binutils
