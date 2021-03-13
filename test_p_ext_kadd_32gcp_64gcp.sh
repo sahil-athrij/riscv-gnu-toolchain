@@ -1,12 +1,12 @@
 ##### BUILD rv32gcp-ilp32
 make clean
 ./configure --prefix="$PWD/obj-rv32gcp/" --with-arch=rv32gcp --with-abi=ilp32
-make -j $(nproc) newlib
+make -j $(nproc) newlib > log32.log 2> err32.log
 
 ##### BUILD rv64gcp-lp64d
 make clean
 ./configure --prefix="$PWD/obj-rv64gcp/" --with-arch=rv64gcp --with-abi=lp64d
-make -j $(nproc) newlib
+make -j $(nproc) newlib > log64.log 2> err64.log
 
 ##### RUN test
 if [ -f "kadd.s" ]; then
