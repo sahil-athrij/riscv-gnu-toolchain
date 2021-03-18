@@ -2,12 +2,12 @@
 #include <stdlib.h>
 #include <stdint.h>
 
-#if TARGET_32BIT
-#define uintXLEN uint32_t
-#define intXLEN int32_t
-#elif TARGET_64BIT
+#if __LP64__
 #define uintXLEN uint64_t
 #define intXLEN int64_t
+#else
+#define uintXLEN uint32_t
+#define intXLEN int32_t
 #endif
 
 static __attribute__ ((noinline))
@@ -43,6 +43,11 @@ intXLEN kaddw (int32_t ra, int32_t rb)
 int
 main ()
 {
+#if __LP64__
+  assert(sizeof(long) == 4);
+#else
+  assert(sizeof(long) == 2);
+#endif
   uintXLEN retKadd8  = kadd8  (0x11223344, 0x55667788);
   uintXLEN retKadd16 = kadd16 (0x11223344, 0x55667788);
   intXLEN  retKaddh  = kaddh  (0x11223344, 0x55667788);

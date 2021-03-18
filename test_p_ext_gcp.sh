@@ -14,10 +14,11 @@ make -j $(nproc) newlib > log64.log 2> err64.log
 test_path="test-p-ext"
 rv32_gcc=./obj-rv32gcp/bin/riscv32-unknown-elf-gcc 
 rv64_gcc=./obj-rv64gcp/bin/riscv64-unknown-elf-gcc 
-rv32_cflags=-DTARGET_32BIT
-rv64_cflags=-DTARGET_64BIT
+# rv32_cflags=-DTARGET_32BIT
+# rv64_cflags=-DTARGET_64BIT
 test_case_names="kadd
 kabs
+sra
 "
 ## RV32
 echo "======================32BIT====================="
@@ -27,7 +28,7 @@ do
         rm $f.s 
     fi
 
-    $rv32_gcc $rv32_cflags -S $test_path/$f/$f.c 
+    $rv32_gcc -S $test_path/$f/$f.c 
 
     if [ -f $f.s ]; then
         echo "==============[CASE]:$f============="
@@ -45,7 +46,7 @@ do
         rm $f.s 
     fi
 
-    $rv64_gcc $rv64_cflags -S $test_path/$f/$f.c 
+    $rv64_gcc -S $test_path/$f/$f.c 
 
     if [ -f $f.s ]; then
         echo "==============[CASE]:$f*============="
