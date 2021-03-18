@@ -1,7 +1,7 @@
 git submodule update --init
 
 cd riscv-gcc
-git submodule update
+git pull https://github.com/linsinan1995/riscv-gcc.git p-ext-dev
 git checkout p-ext-dev
 cd ..
 
