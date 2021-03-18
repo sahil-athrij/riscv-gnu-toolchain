@@ -6,7 +6,8 @@ git checkout p-ext-dev
 cd ..
 
 cd riscv-binutils
-git checkout riscv-binutils-2.35
+git pull https://github.com/linsinan1995/riscv-binutils-gdb.git p-ext-dev
+git checkout p-ext-dev
 cd ..
 
 # Temp Fix. See:
