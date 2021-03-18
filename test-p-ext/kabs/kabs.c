@@ -1,6 +1,7 @@
 #include <p_ext_intrinsic.h>
 #include <stdlib.h>
 #include <stdint.h>
+#include <assert.h>
 
 #if __LP64__
 #define uintXLEN uint64_t
