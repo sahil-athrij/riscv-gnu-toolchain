@@ -4,23 +4,13 @@ gcc_branch=p-ext-dev
 binutils_branch=p-ext-dev
 
 cd riscv-gcc
-git remote | grep -q p-ext && git remote rm p-ext
-git remote | grep -q p-ext-dev && remote rm p-ext-dev
-git remote add p-ext https://github.com/linsinan1995/riscv-gcc.git
-#git remote | grep -q p-ext || git remote add p-ext https://github.com/linsinan1995/riscv-gcc.git
-git fetch p-ext 
-git checkout -f p-ext/$gcc_branch
-git pull
+git pull https://github.com/linsinan1995/riscv-gcc.git 
+git checkout -f $gcc_branch
 cd ..
 
 cd riscv-binutils
-git remote | grep -q p-ext && git remote rm p-ext
-git remote | grep -q p-ext-dev && remote rm p-ext-dev
-git remote add p-ext https://github.com/linsinan1995/riscv-binutils-gdb.git 
-#git remote | grep -q p-ext || git remote add p-ext https://github.com/linsinan1995/riscv-binutils-gdb.git 
-git fetch p-ext 
-git checkout -f p-ext/$binutils_branch
-git pull
+git pull https://github.com/linsinan1995/riscv-binutils-gdb.git 
+git checkout -f $binutils_branch
 cd ..
 
 # Temp Fix. See:
