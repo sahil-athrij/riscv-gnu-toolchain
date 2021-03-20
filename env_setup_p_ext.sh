@@ -5,7 +5,7 @@ binutils_branch=p-ext-dev
 
 cd riscv-gcc
 git branch
-git checkout  $gcc_branch 
+git checkout $gcc_branch/$gcc_branch 
 git pull
 cd ..
 
