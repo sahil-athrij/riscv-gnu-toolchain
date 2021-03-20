@@ -5,13 +5,13 @@ binutils_branch=p-ext-dev
 
 cd riscv-gcc
 git pull https://github.com/linsinan1995/riscv-gcc.git 
-git checkout -f $gcc_branch || git checkout -f origin/$gcc_branch
+git checkout  $gcc_branch 
 git pull
 cd ..
 
 cd riscv-binutils
 git pull https://github.com/linsinan1995/riscv-binutils-gdb.git 
-git checkout -f $binutils_branch || git checkout -f origin/$binutils_branch
+git checkout $binutils_branch 
 git pull
 cd ..
 
