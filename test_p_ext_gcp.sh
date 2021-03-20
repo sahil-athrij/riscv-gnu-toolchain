@@ -34,7 +34,7 @@ do
         echo "==============[CASE]:$f============="
         grep $f $f.s
     else
-        echo "Fail to compile $test_path/$f/$f.c"
+        echo "Fail to compile $test_path/$f/$f.c to assembly"
     fi
     if [ -f $f.o ]; then
         echo "[ELF HEADER]:"

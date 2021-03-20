@@ -10,6 +10,7 @@ git remote add p-ext https://github.com/linsinan1995/riscv-gcc.git
 #git remote | grep -q p-ext || git remote add p-ext https://github.com/linsinan1995/riscv-gcc.git
 git fetch p-ext 
 git checkout -f p-ext/$gcc_branch
+git pull
 cd ..
 
 cd riscv-binutils
@@ -19,6 +20,7 @@ git remote add p-ext https://github.com/linsinan1995/riscv-binutils-gdb.git
 #git remote | grep -q p-ext || git remote add p-ext https://github.com/linsinan1995/riscv-binutils-gdb.git 
 git fetch p-ext 
 git checkout -f p-ext/$binutils_branch
+git pull
 cd ..
 
 # Temp Fix. See:
