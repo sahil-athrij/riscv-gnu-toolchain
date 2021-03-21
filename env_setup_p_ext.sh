@@ -1,18 +1,17 @@
 git submodule update --init
+git submodule update --recursive --remote
 
 gcc_branch=p-ext-dev
 binutils_branch=p-ext-dev
 
 cd riscv-gcc
 git branch
-git checkout $gcc_branch/$gcc_branch 
-git pull
+git checkout $gcc_branch 
 cd ..
 
 cd riscv-binutils
 git branch
 git checkout $binutils_branch 
-git pull
 cd ..
 
 # Temp Fix. See:
