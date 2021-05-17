@@ -1,8 +1,8 @@
 git submodule update --init
 git submodule update --recursive --remote
-
-gcc_branch=p-ext-dev
-binutils_branch=p-ext-dev
+./report.sh
+gcc_branch=riscv-gcc-experiment-p-ext
+binutils_branch=riscv-binutils-experiment-p-ext
 
 cd riscv-gcc
 git branch
@@ -12,11 +12,4 @@ cd ..
 cd riscv-binutils
 git branch
 git checkout $binutils_branch 
-cd ..
-
-# Temp Fix. See:
-#    https://github.com/riscv/riscv-gnu-toolchain/issues/736
-cd qemu
-git checkout v5.2.0
-git submodule update --init --recursive
 cd ..
